@@ -1,0 +1,6 @@
+@TeamDesk_HostAddress = http://localhost:5123
+
+GET {{TeamDesk_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
