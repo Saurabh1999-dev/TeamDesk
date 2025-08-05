@@ -1,9 +1,15 @@
-﻿namespace TeamDesk.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TeamDesk.DTOs
 {
     public class LoginRequest
     {
-        public required string Email { get; set; }
-        public required string Password { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        public string Password { get; set; } = string.Empty;
 
     }
 }

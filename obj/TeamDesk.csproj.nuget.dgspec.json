@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Saurabh\\TeamDesk\\TeamDesk.csproj": {}
+    "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\TeamDesk.csproj": {}
   },
   "projects": {
-    "D:\\Saurabh\\TeamDesk\\TeamDesk.csproj": {
+    "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\TeamDesk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Saurabh\\TeamDesk\\TeamDesk.csproj",
+        "projectUniqueName": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\TeamDesk.csproj",
         "projectName": "TeamDesk",
-        "projectPath": "D:\\Saurabh\\TeamDesk\\TeamDesk.csproj",
+        "projectPath": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\TeamDesk.csproj",
         "packagesPath": "C:\\Users\\MY PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Saurabh\\TeamDesk\\obj\\",
+        "outputPath": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MY PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.7, )"

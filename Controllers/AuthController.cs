@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using TeamDesk.Data;
 using TeamDesk.DTOs;
 using TeamDesk.Services.Interfaces;
 
@@ -10,10 +13,12 @@ namespace TeamDesk.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
+        private readonly AppDbContext _context;
 
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService, AppDbContext context)
         {
             _authService = authService;
+            _context = context;
         }
 
         [HttpPost("login")]
@@ -30,12 +35,65 @@ namespace TeamDesk.Controllers
             return Ok(response);
         }
 
-        [Authorize]
-        [HttpGet("me")]
-        public async Task<IActionResult> Me()
+        [HttpGet("verify")]
+        public async Task<ActionResult<AuthResponse>> VerifyToken()
         {
-            var staff = await _authService.GetCurrentUserAsync(User);
-            return Ok(new { staff.FullName, staff.Email, staff.Role });
+            try
+            {
+                var token = Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+                if (string.IsNullOrEmpty(token))
+                {
+                    return Unauthorized(new AuthResponse
+                    {
+                        Success = false,
+                        Message = "Token not provided"
+                    });
+                }
+
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Unauthorized(new AuthResponse
+                    {
+                        Success = false,
+                        Message = "Invalid token"
+                    });
+                }
+
+                // Find user in database
+                var user = await _context.User.FindAsync(Guid.Parse(userId));
+                if (user == null || !user.IsActive)
+                {
+                    return Unauthorized(new AuthResponse
+                    {
+                        Success = false,
+                        Message = "User not found or inactive"
+                    });
+                }
+
+                // Return user data if token is valid
+                return Ok(new AuthResponse
+                {
+                    Success = true,
+                    Message = "Token is valid",
+                    User = new UserDto
+                    {
+                        Id = user.Id,
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        Role = user.Role
+                    }
+                });
+            }
+            catch
+            {
+                return Unauthorized(new AuthResponse
+                {
+                    Success = false,
+                    Message = "Invalid token"
+                });
+            }
         }
     }
 

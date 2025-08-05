@@ -1,12 +1,27 @@
-﻿using TeamDesk.Enum;
+﻿using System.ComponentModel.DataAnnotations;
+using TeamDesk.Enum;
 
 namespace TeamDesk.DTOs
 {
     public class RegisterRequest
     {
-        public required string FullName { get; set; }
-        public required string Email { get; set; }
-        public required string Password { get; set; }
-        public UserRole Role { get; set; } = UserRole.Staff;
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        [MinLength(2)]
+        public string FirstName { get; set; } = string.Empty;
+
+        [Required]
+        [MinLength(2)]
+        public string LastName { get; set; } = string.Empty;
+
+        [Required]
+        [MinLength(6)]
+        public string Password { get; set; } = string.Empty;
+
+        [Required]
+        public string Role { get; set; } = UserRole.Staff.ToString();
     }
 }

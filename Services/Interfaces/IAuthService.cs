@@ -8,6 +8,6 @@ namespace TeamDesk.Services.Interfaces
     {
         Task<AuthResponse> LoginAsync(LoginRequest request);
         Task<AuthResponse> RegisterAsync(RegisterRequest request);
-        Task<Staff> GetCurrentUserAsync(ClaimsPrincipal user);
+        Task<User> GetCurrentUserAsync(ClaimsPrincipal user);
     }
 }

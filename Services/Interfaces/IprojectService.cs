@@ -1,16 +1,19 @@
-﻿using System.Security.Claims;
-using TeamDesk.DTOs;
-using TeamDesk.Models.Entities;
+﻿using TeamDesk.DTOs;
 
 namespace TeamDesk.Services.Interfaces
 {
-    public interface IprojectService
+    public interface IProjectService
     {
-        Task<bool> CreateProjectAsync(CreateProjectDto dto);
-        Task<IEnumerable<Project>> GetAllProjectsAsync();
-        Task<Project> GetProjectByIdAsync(int id);
-        Task<bool> UpdateProjectAsync(int id, CreateProjectDto dto);
-        Task<bool> DeleteProjectAsync(int id);
+        Task<List<ProjectResponse>> GetAllProjectsAsync();
+        Task<ProjectResponse?> GetProjectByIdAsync(Guid id);
+        Task<ProjectResponse> CreateProjectAsync(CreateProjectRequest request);
+        Task<ProjectResponse> UpdateProjectAsync(Guid id, UpdateProjectRequest request);
+        Task<bool> DeleteProjectAsync(Guid id);
+        Task<List<ProjectResponse>> GetProjectsByStatusAsync(string status);
+        Task<List<ProjectResponse>> GetOverdueProjectsAsync();
+        Task<ProjectResponse> AssignStaffToProjectAsync(Guid projectId, ProjectStaffAssignmentRequest request);
+        Task<bool> RemoveStaffFromProjectAsync(Guid projectId, Guid staffId);
+        Task<List<ClientResponse>> GetAllClientsAsync();
+        Task<ClientResponse> CreateClientAsync(CreateClientRequest request);
     }
-
 }
