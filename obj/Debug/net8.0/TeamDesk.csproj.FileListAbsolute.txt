@@ -308,9 +308,6 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-arm\native\Microsof
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
@@ -337,3 +334,11 @@ D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\refint\TeamDesk.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\TeamDesk.pdb
 D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\TeamDesk.genruntimeconfig.cache
 D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\ref\TeamDesk.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Private.Windows.Core.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

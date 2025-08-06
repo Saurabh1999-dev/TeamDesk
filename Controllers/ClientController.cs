@@ -100,7 +100,7 @@ namespace TeamDesk.Controllers
                 if (!result)
                     return NotFound();
 
-                return Ok(result);
+                return Ok();
             }
             catch (Exception ex)
             {

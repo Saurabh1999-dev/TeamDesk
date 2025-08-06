@@ -34,7 +34,8 @@ namespace TeamDesk.Services
                     Name = c.Name,
                     ContactPerson = c.ContactPerson,
                     ContactEmail = c.ContactEmail,
-                    ContactPhone = c.ContactPhone
+                    ContactPhone = c.ContactPhone,
+                    Address = c.Address
                 }).ToList();
             }
             catch (Exception ex)
@@ -82,7 +83,8 @@ namespace TeamDesk.Services
                     Name = client.Name,
                     ContactPerson = client.ContactPerson,
                     ContactEmail = client.ContactEmail,
-                    ContactPhone = client.ContactPhone
+                    ContactPhone = client.ContactPhone,
+                    Address = client.Address
                 };
             }
             catch (Exception ex)
@@ -104,7 +106,8 @@ namespace TeamDesk.Services
                 Name = client.Name,
                 ContactPerson = client.ContactPerson,
                 ContactEmail = client.ContactEmail,
-                ContactPhone = client.ContactPhone
+                ContactPhone = client.ContactPhone,
+                Address = client.Address,
             };
         }
 
