@@ -27,7 +27,7 @@ namespace TeamDesk.Models.Entities
 
         // User role: Staff, Manager, Admin
         [Required]
-        public string Role { get; set; } = "Staff";
+        public int Role { get; set; } = 0;
 
         // Whether user account is active
         public bool IsActive { get; set; } = true;

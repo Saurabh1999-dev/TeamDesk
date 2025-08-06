@@ -11,6 +11,6 @@
         public DateTime HireDate { get; set; }
         public decimal Salary { get; set; }
         public List<string> Skills { get; set; } = new();
-        public string Role { get; set; } = "Staff";
+        public int Role { get; set; } = 0;
     }
 }

@@ -22,6 +22,6 @@ namespace TeamDesk.DTOs
         public string Password { get; set; } = string.Empty;
 
         [Required]
-        public string Role { get; set; } = UserRole.Staff.ToString();
+        public int Role { get; set; } = (int)UserRole.Staff;
     }
 }
