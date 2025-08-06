@@ -234,51 +234,5 @@ namespace TeamDesk.Controllers
                 return StatusCode(500, new { message = "An error occurred while removing staff from project" });
             }
         }
-
-        /// <summary>
-        /// Get all clients
-        /// </summary>
-        [HttpGet("clients")]
-        public async Task<ActionResult<List<ClientResponse>>> GetAllClients()
-        {
-            try
-            {
-                var clients = await _projectService.GetAllClientsAsync();
-                return Ok(clients);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error retrieving clients");
-                return StatusCode(500, new { message = "An error occurred while retrieving clients" });
-            }
-        }
-
-        /// <summary>
-        /// Create new client
-        /// </summary>
-        [HttpPost("clients")]
-        [Authorize]
-        public async Task<ActionResult<ClientResponse>> CreateClient([FromBody] CreateClientRequest request)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-
-                var client = await _projectService.CreateClientAsync(request);
-                return CreatedAtAction(nameof(GetAllClients), client);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error creating client");
-                return StatusCode(500, new { message = "An error occurred while creating client" });
-            }
-        }
     }
 }

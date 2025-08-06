@@ -13,7 +13,5 @@ namespace TeamDesk.Services.Interfaces
         Task<List<ProjectResponse>> GetOverdueProjectsAsync();
         Task<ProjectResponse> AssignStaffToProjectAsync(Guid projectId, ProjectStaffAssignmentRequest request);
         Task<bool> RemoveStaffFromProjectAsync(Guid projectId, Guid staffId);
-        Task<List<ClientResponse>> GetAllClientsAsync();
-        Task<ClientResponse> CreateClientAsync(CreateClientRequest request);
     }
 }
