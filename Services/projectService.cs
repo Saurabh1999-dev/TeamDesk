@@ -81,8 +81,8 @@ namespace TeamDesk.Services
                     EndDate = request.EndDate,
                     Deadline = request.Deadline,
                     Budget = request.Budget,
-                    Priority = request.Priority,
-                    Status = ProjectStatus.Planning,
+                    Priority = (int)request.Priority,  // ✅ Fixed: Cast enum to int
+                    Status = (int)ProjectStatus.Planning,  // ✅ Fixed: Cast enum to int
                     Progress = 0,
                     IsActive = true,
                     CreatedAt = DateTime.UtcNow,
@@ -131,8 +131,8 @@ namespace TeamDesk.Services
                 project.EndDate = request.EndDate;
                 project.Deadline = request.Deadline;
                 project.Budget = request.Budget;
-                project.Status = request.Status;
-                project.Priority = request.Priority;
+                project.Status = (int)request.Status;  // ✅ Fixed: Cast enum to int
+                project.Priority = (int)request.Priority;  // ✅ Fixed: Cast enum to int
                 project.Progress = request.Progress;
                 project.UpdatedAt = DateTime.UtcNow;
 
@@ -199,7 +199,7 @@ namespace TeamDesk.Services
                     .Include(p => p.StaffAssignments)
                         .ThenInclude(psa => psa.Staff)
                         .ThenInclude(s => s.User)
-                    .Where(p => p.IsActive && p.Status == projectStatus)
+                    .Where(p => p.IsActive && p.Status == (int)projectStatus)  // ✅ Fixed: Cast enum to int for comparison
                     .OrderByDescending(p => p.CreatedAt)
                     .ToListAsync();
 
@@ -217,13 +217,15 @@ namespace TeamDesk.Services
             try
             {
                 var today = DateTime.UtcNow.Date;
+                var completedStatusValue = (int)ProjectStatus.Completed;  // ✅ Fixed: Store enum value as int
+
                 var projects = await _context.Projects
                     .Include(p => p.Client)
                     .Include(p => p.StaffAssignments)
                         .ThenInclude(psa => psa.Staff)
                         .ThenInclude(s => s.User)
                     .Where(p => p.IsActive &&
-                               p.Status != ProjectStatus.Completed &&
+                               p.Status != completedStatusValue &&  // ✅ Fixed: Compare with int value
                                p.Deadline.Date < today)
                     .OrderBy(p => p.Deadline)
                     .ToListAsync();
@@ -387,10 +389,15 @@ namespace TeamDesk.Services
             await _context.SaveChangesAsync();
         }
 
+        // ✅ Fixed: Updated mapping method to handle int to enum conversion
         private static ProjectResponse MapToProjectResponse(Project project)
         {
             var today = DateTime.UtcNow.Date;
             var daysRemaining = (project.Deadline.Date - today).Days;
+
+            // Convert int values back to enums for response
+            var projectStatus = project.Status;
+            var projectPriority = project.Priority;
 
             return new ProjectResponse
             {
@@ -409,10 +416,10 @@ namespace TeamDesk.Services
                 EndDate = project.EndDate,
                 Deadline = project.Deadline,
                 Budget = project.Budget,
-                Status = project.Status.ToString(),
-                Priority = project.Priority.ToString(),
+                Status = projectStatus,
+                Priority = projectPriority,
                 Progress = project.Progress,
-                IsOverdue = project.Deadline.Date < today && project.Status != ProjectStatus.Completed,
+                IsOverdue = project.Deadline.Date < today && projectStatus != 3,  // Use enum comparison
                 DaysRemaining = daysRemaining,
                 StaffAssignments = project.StaffAssignments
                     .Where(psa => psa.IsActive)

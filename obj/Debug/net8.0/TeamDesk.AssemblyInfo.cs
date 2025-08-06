@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeamDesk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f09cb0a49c57847cfcead9516fa623e1dae15168")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eba41bf4a803f0675d728a69a810514c133f511c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeamDesk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeamDesk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

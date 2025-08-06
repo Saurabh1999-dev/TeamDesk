@@ -133,7 +133,7 @@ namespace TeamDesk.Controllers
                     return NotFound(new { message = $"Project with ID {id} not found" });
                 }
 
-                return NoContent();
+                return Ok();
             }
             catch (Exception ex)
             {

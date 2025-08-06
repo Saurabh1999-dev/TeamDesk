@@ -70,8 +70,8 @@ namespace TeamDesk.DTOs
         public DateTime? EndDate { get; set; }
         public DateTime Deadline { get; set; }
         public decimal Budget { get; set; }
-        public string Status { get; set; } = string.Empty;
-        public string Priority { get; set; } = string.Empty;
+        public int Status { get; set; }
+        public int Priority { get; set; }
         public int Progress { get; set; }
         public bool IsOverdue { get; set; }
         public int DaysRemaining { get; set; }

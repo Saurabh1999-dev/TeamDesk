@@ -26,10 +26,8 @@ namespace TeamDesk.DTOs
         [Range(0, double.MaxValue)]
         public decimal Budget { get; set; }
 
-        public ProjectStatus Status { get; set; } = ProjectStatus.Planning;
-
-        public ProjectPriority Priority { get; set; } = ProjectPriority.Medium;
-
+        public int Status { get; set; }
+        public int Priority { get; set; }
         [Range(0, 100)]
         public int Progress { get; set; } = 0;
 
