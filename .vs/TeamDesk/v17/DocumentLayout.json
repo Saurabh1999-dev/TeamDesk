@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\controllers\\taskcommentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:controllers\\taskcommentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\dtos\\response\\taskresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:dtos\\response\\taskresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\models\\entities\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:models\\entities\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250807111956_[Add-new-column].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250807111956_[Add-new-column].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\services\\interfaces\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\interfaces\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +47,8 @@
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\services\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\models\\entities\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:models\\entities\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\models\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -79,16 +95,8 @@
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\fileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\services\\interfaces\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:services\\interfaces\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\dtos\\response\\taskresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|solutionrelative:dtos\\response\\taskresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A61D1680-DD0E-448C-A6F7-D26BB6795198}|TeamDesk.csproj|d:\\saurabh\\teamdesk\\teamdeskbe\\dtos\\response\\taskattachmentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -282,193 +290,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITaskService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\ITaskService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ITaskService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\ITaskService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ITaskService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T07:23:57.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "NotificationHub.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Hubs\\NotificationHub.cs",
-              "RelativeDocumentMoniker": "Hubs\\NotificationHub.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Hubs\\NotificationHub.cs",
-              "RelativeToolTip": "Hubs\\NotificationHub.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwDQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T09:12:17.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StaffService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\StaffService.cs",
-              "RelativeDocumentMoniker": "Services\\StaffService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\StaffService.cs",
-              "RelativeToolTip": "Services\\StaffService.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAtwD8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T07:30:17.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "TaskService.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\TaskService.cs",
               "RelativeDocumentMoniker": "Services\\TaskService.cs",
               "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\TaskService.cs",
               "RelativeToolTip": "Services\\TaskService.cs",
-              "ViewState": "AQIAAJsBAAAAAAAAAAAYwKkBAABSAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAmwBoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-07T06:59:20.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "INotificationService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\INotificationService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\INotificationService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\INotificationService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\INotificationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T09:18:13.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\NotificationService.cs",
-              "RelativeDocumentMoniker": "Services\\NotificationService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\NotificationService.cs",
-              "RelativeToolTip": "Services\\NotificationService.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAcwLgAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T09:13:08.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "TasksController.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\TasksController.cs",
               "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
               "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\TasksController.cs",
               "RelativeToolTip": "Controllers\\TasksController.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAswEQBAAAIAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAwCEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-07T06:58:58.709Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Task.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Task.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Task.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Task.cs",
-              "RelativeToolTip": "Models\\Entities\\Task.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAnAAAA",
+              "DocumentIndex": 1,
+              "Title": "TaskCommentsController.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\TaskCommentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaskCommentsController.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\TaskCommentsController.cs",
+              "RelativeToolTip": "Controllers\\TaskCommentsController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T06:59:22.988Z",
+              "WhenOpened": "2025-08-07T10:52:21.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Project.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Project.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Project.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Project.cs",
-              "RelativeToolTip": "Models\\Entities\\Project.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T10:50:45.075Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IStaffService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IStaffService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IStaffService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IStaffService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IStaffService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T07:26:12.022Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "StaffController.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\StaffController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\StaffController.cs",
-              "RelativeToolTip": "Controllers\\StaffController.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAAwE8AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T07:24:03.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ClientController.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\ClientController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ClientController.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\ClientController.cs",
-              "RelativeToolTip": "Controllers\\ClientController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAA3wHcAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T11:22:49.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NotificationsController.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\NotificationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\NotificationsController.cs",
-              "RelativeToolTip": "Controllers\\NotificationsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T10:26:15.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\AuthService.cs",
-              "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAtwEsAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T06:54:33.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T06:25:15.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -481,7 +359,189 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Task.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Task.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Task.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Task.cs",
+              "RelativeToolTip": "Models\\Entities\\Task.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBUAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T11:16:50.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250807111956_[Add-new-column].cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250807111956_[Add-new-column].cs",
+              "RelativeDocumentMoniker": "Migrations\\20250807111956_[Add-new-column].cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250807111956_[Add-new-column].cs",
+              "RelativeToolTip": "Migrations\\20250807111956_[Add-new-column].cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T11:19:57.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskResponse.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\TaskResponse.cs",
+              "RelativeDocumentMoniker": "DTOs\\Response\\TaskResponse.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\TaskResponse.cs",
+              "RelativeToolTip": "DTOs\\Response\\TaskResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T11:20:55.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NotificationHub.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Hubs\\NotificationHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\NotificationHub.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Hubs\\NotificationHub.cs",
+              "RelativeToolTip": "Hubs\\NotificationHub.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAswB4AAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:12:17.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\INotificationService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\INotificationService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\INotificationService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\INotificationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:18:13.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StaffService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\StaffService.cs",
+              "RelativeDocumentMoniker": "Services\\StaffService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\StaffService.cs",
+              "RelativeToolTip": "Services\\StaffService.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAtwD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T07:30:17.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Services\\NotificationService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\NotificationService.cs",
+              "RelativeToolTip": "Services\\NotificationService.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAcwLgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T09:13:08.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Project.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Project.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Project.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Project.cs",
+              "RelativeToolTip": "Models\\Entities\\Project.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T10:50:45.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IStaffService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IStaffService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IStaffService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IStaffService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IStaffService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T07:26:12.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "Controllers\\StaffController.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAwE8AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T07:24:03.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientController.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "Controllers\\ClientController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAA3wHcAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T11:22:49.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NotificationsController.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\NotificationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\NotificationsController.cs",
+              "RelativeToolTip": "Controllers\\NotificationsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T10:26:15.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAtwEsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T06:54:33.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T06:25:15.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "ProjectController.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Controllers\\ProjectController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
@@ -494,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -507,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "FileUploadService.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\FileUploadService.cs",
               "RelativeDocumentMoniker": "Services\\FileUploadService.cs",
@@ -520,7 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "TeamDesk.csproj",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\TeamDesk.csproj",
               "RelativeDocumentMoniker": "TeamDesk.csproj",
@@ -533,20 +593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ITaskService.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\ITaskService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ITaskService.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\ITaskService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ITaskService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBQAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T07:23:57.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -559,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "TaskAttachmentResponse.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\TaskAttachmentResponse.cs",
               "RelativeDocumentMoniker": "DTOs\\Response\\TaskAttachmentResponse.cs",
@@ -572,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "TaskAttachment.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\TaskAttachment.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\TaskAttachment.cs",
@@ -585,20 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "TaskResponse.cs",
-              "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\TaskResponse.cs",
-              "RelativeDocumentMoniker": "DTOs\\Response\\TaskResponse.cs",
-              "ToolTip": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\TaskResponse.cs",
-              "RelativeToolTip": "DTOs\\Response\\TaskResponse.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA7wB4AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T05:38:42.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "20250807070036_[Remove-forginkey-column].cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250807070036_[Remove-forginkey-column].cs",
               "RelativeDocumentMoniker": "Migrations\\20250807070036_[Remove-forginkey-column].cs",
@@ -611,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "UpdateTaskStatusRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\UpdateTaskStatusRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\UpdateTaskStatusRequest.cs",
@@ -624,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "20250807060037_[Task].cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250807060037_[Task].cs",
               "RelativeDocumentMoniker": "Migrations\\20250807060037_[Task].cs",
@@ -637,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "CreateStaffRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\CreateStaffRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateStaffRequest.cs",
@@ -650,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Notification.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Notification.cs",
               "RelativeDocumentMoniker": "DTOs\\Notification.cs",
@@ -663,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "ProjectDTOs.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\ProjectDTOs.cs",
               "RelativeDocumentMoniker": "DTOs\\ProjectDTOs.cs",
@@ -676,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterRequest.cs",
@@ -689,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "StaffResponse.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\StaffResponse.cs",
               "RelativeDocumentMoniker": "DTOs\\StaffResponse.cs",
@@ -702,7 +736,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\LoginRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginRequest.cs",
@@ -715,7 +749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "TaskComment.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\TaskComment.cs",
               "RelativeDocumentMoniker": "DTOs\\TaskComment.cs",
@@ -728,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\UserDto.cs",
               "RelativeDocumentMoniker": "DTOs\\UserDto.cs",
@@ -741,7 +775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "ProjectService.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\ProjectService.cs",
               "RelativeDocumentMoniker": "Services\\ProjectService.cs",
@@ -754,7 +788,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "UpdateTaskRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\UpdateTaskRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\UpdateTaskRequest.cs",
@@ -767,7 +801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "NotificationEntityType.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Enum\\NotificationEntityType.cs",
               "RelativeDocumentMoniker": "Enum\\NotificationEntityType.cs",
@@ -780,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "NotificationType.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Enum\\NotificationType.cs",
               "RelativeDocumentMoniker": "Enum\\NotificationType.cs",
@@ -793,7 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "TaskPriority.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Enum\\TaskPriority.cs",
               "RelativeDocumentMoniker": "Enum\\TaskPriority.cs",
@@ -806,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "TaskAssignmentNotificationRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\TaskAssignmentNotificationRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\TaskAssignmentNotificationRequest.cs",
@@ -819,7 +853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "CreateNotificationRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\CreateNotificationRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\CreateNotificationRequest.cs",
@@ -832,7 +866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "AddTaskCommentRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\AddTaskCommentRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\AddTaskCommentRequest.cs",
@@ -845,7 +879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "UpdateTaskProgressRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\UpdateTaskProgressRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\UpdateTaskProgressRequest.cs",
@@ -858,7 +892,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "AssignTaskRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\AssignTaskRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\AssignTaskRequest.cs",
@@ -871,7 +905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 47,
               "Title": "NotificationResponse.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\NotificationResponse.cs",
               "RelativeDocumentMoniker": "DTOs\\Response\\NotificationResponse.cs",
@@ -884,7 +918,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 49,
               "Title": "clientService.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\clientService.cs",
               "RelativeDocumentMoniker": "Services\\clientService.cs",
@@ -897,7 +931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 48,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
@@ -910,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 50,
               "Title": "IprojectService.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\Interfaces\\IprojectService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IprojectService.cs",
@@ -923,7 +957,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 53,
               "Title": "UserRole.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Enum\\UserRole.cs",
               "RelativeDocumentMoniker": "Enum\\UserRole.cs",
@@ -935,7 +969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 51,
               "Title": "Projects.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Enum\\Projects.cs",
               "RelativeDocumentMoniker": "Enum\\Projects.cs",
@@ -947,7 +981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 52,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -959,7 +993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "20250805154752_update-table.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250805154752_update-table.cs",
               "RelativeDocumentMoniker": "Migrations\\20250805154752_update-table.cs",
@@ -971,7 +1005,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 54,
               "Title": "JwtService.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Services\\JwtService.cs",
               "RelativeDocumentMoniker": "Services\\JwtService.cs",
@@ -983,7 +1017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 56,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
@@ -995,7 +1029,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 55,
               "Title": "AuthResponse.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\AuthResponse.cs",
               "RelativeDocumentMoniker": "DTOs\\AuthResponse.cs",
@@ -1007,7 +1041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "20250805111252_project.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250805111252_project.cs",
               "RelativeDocumentMoniker": "Migrations\\20250805111252_project.cs",
@@ -1019,7 +1053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "20250805094002_[updateaddStaff].cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250805094002_[updateaddStaff].cs",
               "RelativeDocumentMoniker": "Migrations\\20250805094002_[updateaddStaff].cs",
@@ -1031,7 +1065,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 58,
               "Title": "20250805083133_[addStaff].cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Migrations\\20250805083133_[addStaff].cs",
               "RelativeDocumentMoniker": "Migrations\\20250805083133_[addStaff].cs",
@@ -1043,7 +1077,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "ProjectStaffAssignment.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\ProjectStaffAssignment.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\ProjectStaffAssignment.cs",
@@ -1055,7 +1089,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 60,
               "Title": "Client.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Client.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Client.cs",
@@ -1067,7 +1101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "StaffResponse.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Response\\StaffResponse.cs",
               "RelativeDocumentMoniker": "DTOs\\Response\\StaffResponse.cs",
@@ -1079,7 +1113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "Staff.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Models\\Entities\\Staff.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Staff.cs",
@@ -1091,7 +1125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "UpdateStaffRequest.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\Request\\UpdateStaffRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\Request\\UpdateStaffRequest.cs",
@@ -1103,7 +1137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 64,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -1115,7 +1149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "CreateProjectDto.cs",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\DTOs\\CreateProjectDto.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateProjectDto.cs",
@@ -1127,7 +1161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
@@ -1139,7 +1173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "Dockerfile",
               "DocumentMoniker": "D:\\Saurabh\\TeamDesk\\TeamDeskBE\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",

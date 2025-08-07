@@ -21,5 +21,9 @@ namespace TeamDesk.Services.Interfaces
         Task<TaskAttachmentResponse> UploadTaskAttachmentAsync(Guid taskId, IFormFile file, Guid uploadedById);
         Task<bool> DeleteTaskAttachmentAsync(Guid taskId, Guid attachmentId);
         Task<List<TaskAttachmentResponse>> GetTaskAttachmentsAsync(Guid taskId);
+
+        Task<TaskCommentResponse> AddTaskCommentAsync(Guid taskId, string comment, Guid userId);
+        Task<List<TaskCommentResponse>> GetTaskCommentsAsync(Guid taskId);
+        Task<bool> DeleteTaskCommentAsync(Guid commentId);
     }
 }

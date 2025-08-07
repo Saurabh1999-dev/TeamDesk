@@ -629,6 +629,84 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TeamDesk.Controllers.TaskCommentsController",
+    "Method": "AddTaskComment",
+    "RelativePath": "api/TaskComments/{taskId}/comments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "TeamDesk.DTOs.Request.AddTaskCommentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TeamDesk.DTOs.TaskCommentResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TeamDesk.Controllers.TaskCommentsController",
+    "Method": "GetTaskComments",
+    "RelativePath": "api/TaskComments/{taskId}/comments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[TeamDesk.DTOs.TaskCommentResponse, TeamDesk, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TeamDesk.Controllers.TaskCommentsController",
+    "Method": "DeleteTaskComment",
+    "RelativePath": "api/TaskComments/{taskId}/comments/{commentId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TeamDesk.Controllers.TasksController",
     "Method": "GetAllTasks",
     "RelativePath": "api/Tasks",

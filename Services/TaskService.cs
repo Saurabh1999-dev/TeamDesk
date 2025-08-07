@@ -33,6 +33,10 @@ namespace TeamDesk.Services
                         .ThenInclude(s => s.User)
                     .Include(t => t.CreatedBy)
                         .ThenInclude(s => s.User)
+                    .Include(t => t.Comments)
+                        .ThenInclude(c => c.User)
+                    .Include(t => t.Attachments)
+                        .ThenInclude(a => a.UploadedBy)
                     .Where(t => t.IsActive)
                     .OrderByDescending(t => t.CreatedAt)
                     .ToListAsync();
@@ -45,6 +49,7 @@ namespace TeamDesk.Services
                 throw;
             }
         }
+
 
         public async Task<TaskAttachmentResponse> UploadTaskAttachmentAsync(Guid taskId, IFormFile file, Guid uploadedById)
         {
@@ -620,14 +625,16 @@ namespace TeamDesk.Services
                 Title = task.Title,
                 Description = task.Description,
                 ProjectId = task.ProjectId,
-                ProjectName = task.Project?.Name ?? string.Empty,
+                ProjectName = task.Project?.Name ?? "Unknown Project",
                 AssignedToId = task.AssignedToId,
-                AssignedToName = task.AssignedTo != null ?
-                    $"{task.AssignedTo.User.FirstName} {task.AssignedTo.User.LastName}" : null,
+                AssignedToName = task.AssignedTo?.User != null
+                    ? $"{task.AssignedTo.User.FirstName} {task.AssignedTo.User.LastName}"
+                    : null,
                 AssignedToEmail = task.AssignedTo?.User?.Email,
-                //CreatedById = task.CreatedById,
-                CreatedByName = task.CreatedBy != null ?
-                    $"{task.CreatedBy.User.FirstName} {task.CreatedBy.User.LastName}" : null,
+                CreatedById = task.CreatedById,
+                CreatedByName = task.CreatedBy?.User != null
+                    ? $"{task.CreatedBy.User.FirstName} {task.CreatedBy.User.LastName}"
+                    : "Unknown",
                 Status = (Enum.TaskStatus)task.Status,
                 Priority = (TaskPriority)task.Priority,
                 StartDate = task.StartDate,
@@ -635,9 +642,28 @@ namespace TeamDesk.Services
                 CompletedDate = task.CompletedDate,
                 EstimatedHours = task.EstimatedHours,
                 ActualHours = task.ActualHours,
-                Progress = task.Progress,
-                IsOverdue = isOverdue,
+                //Progress = task.Progress ?? 0,
                 Tags = task.Tags ?? new List<string>(),
+                IsOverdue = isOverdue,
+                CreatedAt = task.CreatedAt,
+                UpdatedAt = task.UpdatedAt,
+
+                // ✅ Map comments to TaskCommentResponse DTOs
+                Comments = task.Comments?.Where(c => c.IsActive)
+                    .OrderBy(c => c.CreatedAt) // Order comments chronologically
+                    .Select(c => new TaskCommentResponse
+                    {
+                        Id = c.Id,
+                        TaskId = c.TaskId,
+                        UserId = c.UserId,
+                        UserName = c.User != null
+                            ? $"{c.User.FirstName} {c.User.LastName}"
+                            : "Unknown User",
+                        Comment = c.Comment,
+                        CreatedAt = c.CreatedAt
+                    }).ToList() ?? new List<TaskCommentResponse>(),
+
+                // ✅ Map attachments if included
                 Attachments = task.Attachments?.Where(a => a.IsActive).Select(a => new TaskAttachmentResponse
                 {
                     Id = a.Id,
@@ -647,21 +673,106 @@ namespace TeamDesk.Services
                     FileType = a.FileType,
                     FileUrl = a.FileUrl,
                     FileSize = a.FileSize,
-                    UploadedByName = a.UploadedBy != null ? $"{a.UploadedBy.FirstName} {a.UploadedBy.LastName}" : "Unknown",
+                    UploadedByName = a.UploadedBy != null
+                        ? $"{a.UploadedBy.FirstName} {a.UploadedBy.LastName}"
+                        : "Unknown",
                     CreatedAt = a.CreatedAt
-                }).ToList() ?? new List<TaskAttachmentResponse>(),
-                Comments = task.Comments?.Select(c => new TaskCommentResponse
+                }).ToList() ?? new List<TaskAttachmentResponse>()
+            };
+        }
+
+
+        // Services/TaskService.cs - Add these implementations
+        public async Task<TaskCommentResponse> AddTaskCommentAsync(Guid taskId, string comment, Guid userId)
+        {
+            try
+            {
+                var task = await _context.Tasks.FindAsync(taskId);
+                if (task == null || !task.IsActive)
+                {
+                    throw new InvalidOperationException($"Task with ID {taskId} not found or inactive");
+                }
+
+                var user = await _context.User.FindAsync(userId);
+                if (user == null)
+                {
+                    throw new InvalidOperationException($"User with ID {userId} not found");
+                }
+
+                var taskComment = new TaskComment
+                {
+                    TaskId = taskId,
+                    UserId = userId,
+                    Comment = comment,
+                    IsActive = true,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                };
+
+                _context.TaskComments.Add(taskComment);
+                await _context.SaveChangesAsync();
+
+                return new TaskCommentResponse
+                {
+                    Id = taskComment.Id,
+                    TaskId = taskComment.TaskId,
+                    UserId = taskComment.UserId,
+                    UserName = $"{user.FirstName} {user.LastName}",
+                    Comment = taskComment.Comment,
+                    CreatedAt = taskComment.CreatedAt
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error adding comment to task {TaskId}", taskId);
+                throw;
+            }
+        }
+
+        public async Task<List<TaskCommentResponse>> GetTaskCommentsAsync(Guid taskId)
+        {
+            try
+            {
+                var comments = await _context.TaskComments
+                    .Include(c => c.User)
+                    .Where(c => c.TaskId == taskId && c.IsActive)
+                    .OrderBy(c => c.CreatedAt)
+                    .ToListAsync();
+
+                return comments.Select(c => new TaskCommentResponse
                 {
                     Id = c.Id,
                     TaskId = c.TaskId,
                     UserId = c.UserId,
-                    UserName = c.User != null ? $"{c.User.FirstName} {c.User.LastName}" : "Unknown User",
+                    UserName = $"{c.User.FirstName} {c.User.LastName}",
                     Comment = c.Comment,
                     CreatedAt = c.CreatedAt
-                }).ToList() ?? new List<TaskCommentResponse>(),
-                CreatedAt = task.CreatedAt,
-                UpdatedAt = task.UpdatedAt
-            };
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving comments for task {TaskId}", taskId);
+                throw;
+            }
         }
+
+        public async Task<bool> DeleteTaskCommentAsync(Guid commentId)
+        {
+            try
+            {
+                var comment = await _context.TaskComments.FindAsync(commentId);
+                if (comment == null || !comment.IsActive) return false;
+
+                comment.IsActive = false;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting comment {CommentId}", commentId);
+                throw;
+            }
+        }
+
     }
 }

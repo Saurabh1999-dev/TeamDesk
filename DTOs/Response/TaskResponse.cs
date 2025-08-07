@@ -13,7 +13,7 @@ namespace TeamDesk.DTOs
         public Guid? AssignedToId { get; set; }
         public string? AssignedToName { get; set; }
         public string? AssignedToEmail { get; set; }
-        public Guid CreatedById { get; set; }
+        public Guid? CreatedById { get; set; }
         public string CreatedByName { get; set; } = string.Empty;
         public Enum.TaskStatus Status { get; set; }
         public TaskPriority Priority { get; set; }

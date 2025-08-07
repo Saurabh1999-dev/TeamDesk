@@ -21,7 +21,7 @@ namespace TeamDesk.Hubs
             if (userId != null)
             {
                 await Groups.AddToGroupAsync(Context.ConnectionId, $"user_{userId}");
-                _logger.LogInformation("User {UserId} connected to SignalR with connection {ConnectionId}", userId, Context.ConnectionId);
+                _logger.LogInformation("User {UserId} connected to SignalR", userId);
             }
             await base.OnConnectedAsync();
         }
@@ -56,6 +56,65 @@ namespace TeamDesk.Hubs
             {
                 await Clients.Caller.SendAsync("NotificationMarkedAsRead", notificationId);
             }
+        }
+
+        public async Task JoinTaskChat(string taskId)
+        {
+            var userId = Context.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var groupName = $"task_{taskId}";
+                await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
+                Context.Items[$"task_{taskId}"] = true;
+
+                _logger.LogInformation("User {UserId} joined task chat for task {TaskId}", userId, taskId);
+                await Clients.OthersInGroup(groupName).SendAsync("UserJoinedTaskChat", new
+                {
+                    UserId = userId,
+                    TaskId = taskId,
+                    Timestamp = DateTime.UtcNow
+                });
+            }
+        }
+
+        public async Task LeaveTaskChat(string taskId)
+        {
+            var userId = Context.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var groupName = $"task_{taskId}";
+                await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
+                Context.Items.Remove($"task_{taskId}");
+
+                _logger.LogInformation("User {UserId} left task chat for task {TaskId}", userId, taskId);
+                await Clients.OthersInGroup(groupName).SendAsync("UserLeftTaskChat", new
+                {
+                    UserId = userId,
+                    TaskId = taskId,
+                    Timestamp = DateTime.UtcNow
+                });
+            }
+        }
+
+        public async Task UserTyping(string taskId, string userName)
+        {
+            var groupName = $"task_{taskId}";
+            await Clients.OthersInGroup(groupName).SendAsync("UserTyping", new
+            {
+                TaskId = taskId,
+                UserName = userName,
+                Timestamp = DateTime.UtcNow
+            });
+        }
+        public async Task UserStoppedTyping(string taskId, string userName)
+        {
+            var groupName = $"task_{taskId}";
+            await Clients.OthersInGroup(groupName).SendAsync("UserStoppedTyping", new
+            {
+                TaskId = taskId,
+                UserName = userName,
+                Timestamp = DateTime.UtcNow
+            });
         }
     }
 }
