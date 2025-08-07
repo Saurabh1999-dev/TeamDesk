@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using TeamDesk.DTOs;
 using TeamDesk.Models.Entities;
 
@@ -13,6 +14,10 @@ namespace TeamDesk.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<ProjectStaffAssignment> ProjectStaffAssignments { get; set; }
+        public DbSet<Models.Entities.Task> Tasks { get; set; }
+        public DbSet<TaskComment> TaskComments { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<TaskAttachment> TaskAttachments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -79,6 +84,82 @@ namespace TeamDesk.Data
                       .IsUnique()
                       .HasFilter("[IsActive] = 1");
             });
+
+            modelBuilder.Entity<Models.Entities.Task>()
+            .HasOne(t => t.Project)
+            .WithMany()
+            .HasForeignKey(t => t.ProjectId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Models.Entities.Task>()
+                .HasOne(t => t.AssignedTo)
+                .WithMany()
+                .HasForeignKey(t => t.AssignedToId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            //modelBuilder.Entity<Models.Entities.Task>()
+            //    .HasOne(t => t.CreatedBy)
+            //    .WithMany()
+            //    .HasForeignKey(t => t.CreatedById)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            // Configure Tags as JSON column
+            modelBuilder.Entity<Models.Entities.Task>()
+                .Property(t => t.Tags)
+                .HasConversion(
+                    tags => System.Text.Json.JsonSerializer.Serialize(tags, (JsonSerializerOptions)null),
+                    tags => System.Text.Json.JsonSerializer.Deserialize<List<string>>(tags, (JsonSerializerOptions)null) ?? new List<string>());
+
+            // TaskComment entity configuration
+            modelBuilder.Entity<TaskComment>()
+                .HasOne(tc => tc.Task)
+                .WithMany(t => t.Comments)
+                .HasForeignKey(tc => tc.TaskId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TaskComment>()
+                .HasOne(tc => tc.User)
+                .WithMany()
+                .HasForeignKey(tc => tc.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Notification entity configuration
+            modelBuilder.Entity<Notification>()
+                .HasOne(n => n.User)
+                .WithMany()
+                .HasForeignKey(n => n.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Indexes for better performance
+            modelBuilder.Entity<Models.Entities.Task>()
+                .HasIndex(t => t.ProjectId);
+
+            modelBuilder.Entity<Models.Entities.Task>()
+                .HasIndex(t => t.AssignedToId);
+
+            modelBuilder.Entity<Models.Entities.Task>()
+                .HasIndex(t => t.Status);
+
+            modelBuilder.Entity<Models.Entities.Task>()
+                .HasIndex(t => t.DueDate);
+
+            modelBuilder.Entity<Notification>()
+                .HasIndex(n => new { n.UserId, n.IsRead });
+            modelBuilder.Entity<TaskAttachment>()
+            .HasOne(ta => ta.Task)
+            .WithMany(t => t.Attachments)
+            .HasForeignKey(ta => ta.TaskId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TaskAttachment>()
+                .HasOne(ta => ta.UploadedBy)
+                .WithMany()
+                .HasForeignKey(ta => ta.UploadedById)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Index for performance
+            modelBuilder.Entity<TaskAttachment>()
+                .HasIndex(ta => ta.TaskId);
         }
 
     }

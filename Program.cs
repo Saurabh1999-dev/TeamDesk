@@ -80,10 +80,13 @@ builder.Services.AddSwaggerGen(options =>
 
 // === App-specific services ===
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
+//builder.Services.AddScoped<INotificationService>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IStaffService, StaffService>();
 builder.Services.AddScoped<IClientService, clientService>();
 builder.Services.AddScoped<ICaptchaService, CaptchaService>();
+builder.Services.AddScoped<IFileUploadService, FileUploadService>();
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>

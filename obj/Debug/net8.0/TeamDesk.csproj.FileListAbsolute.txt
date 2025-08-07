@@ -198,6 +198,8 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Configurati
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
@@ -214,6 +216,7 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -227,12 +230,15 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Composition.TypedParts.dl
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Private.Windows.Core.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Formats.Asn1.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.IO.Pipelines.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Memory.Data.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Permissions.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Text.Json.dll
@@ -308,7 +314,9 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-arm\native\Microsof
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
@@ -334,11 +342,3 @@ D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\refint\TeamDesk.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\TeamDesk.pdb
 D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\TeamDesk.genruntimeconfig.cache
 D:\Saurabh\TeamDesk\TeamDeskBE\obj\Debug\net8.0\ref\TeamDesk.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Private.Windows.Core.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

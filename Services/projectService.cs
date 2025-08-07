@@ -357,7 +357,7 @@ namespace TeamDesk.Services
         }
 
         // Private helper methods
-        private async Task AssignStaffToProjectInternalAsync(Guid projectId, ProjectStaffAssignmentRequest request)
+        private async System.Threading.Tasks.Task AssignStaffToProjectInternalAsync(Guid projectId, ProjectStaffAssignmentRequest request)
         {
             // Validate staff exists
             var staff = await _context.Staff.FindAsync(request.StaffId);
@@ -366,7 +366,6 @@ namespace TeamDesk.Services
                 throw new InvalidOperationException($"Staff with ID {request.StaffId} not found");
             }
 
-            // Check if staff is already assigned to this project
             var existingAssignment = await _context.ProjectStaffAssignments
                 .FirstOrDefaultAsync(psa => psa.ProjectId == projectId &&
                                            psa.StaffId == request.StaffId &&
@@ -391,13 +390,10 @@ namespace TeamDesk.Services
             await _context.SaveChangesAsync();
         }
 
-        // ✅ Fixed: Updated mapping method to handle int to enum conversion
         private static ProjectResponse MapToProjectResponse(Project project)
         {
             var today = DateTime.UtcNow.Date;
             var daysRemaining = (project.Deadline.Date - today).Days;
-
-            // Convert int values back to enums for response
             var projectStatus = project.Status;
             var projectPriority = project.Priority;
 
