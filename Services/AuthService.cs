@@ -29,22 +29,24 @@ namespace TeamDesk.Services
         {
             try
             {
+                var normalizedEmail = request.Email.Trim().ToLower();
+
                 var user = await _context.User
-                    .FirstOrDefaultAsync(u => u.Email == request.Email && u.IsActive);
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(u => u.Email == normalizedEmail && u.IsActive);
 
                 if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
                 {
-                    return (new AuthResponse
+                    return new AuthResponse
                     {
                         Success = false,
                         Message = "Invalid email or password"
-                    });
+                    };
                 }
 
-                // Generate JWT token
                 var token = _jwtService.GenerateToken(user);
 
-                return (new AuthResponse
+                return new AuthResponse
                 {
                     Success = true,
                     Message = "Login successful",
@@ -57,9 +59,9 @@ namespace TeamDesk.Services
                         LastName = user.LastName,
                         Role = user.Role
                     }
-                });
+                };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return new AuthResponse
                 {
@@ -68,6 +70,7 @@ namespace TeamDesk.Services
                 };
             }
         }
+
 
 
         public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
