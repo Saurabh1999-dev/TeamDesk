@@ -88,6 +88,7 @@ builder.Services.AddScoped<IClientService, clientService>();
 builder.Services.AddScoped<ICaptchaService, CaptchaService>();
 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<IFaqService, FaqService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
