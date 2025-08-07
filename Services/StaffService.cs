@@ -62,7 +62,6 @@ namespace TeamDesk.Services
                     throw new InvalidOperationException($"Staff with employee code {request.EmployeeCode} already exists");
                 }
 
-                // Create user first
                 var user = new User
                 {
                     Email = request.Email,

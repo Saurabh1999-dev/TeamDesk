@@ -13,12 +13,14 @@ namespace TeamDesk.Services
         private readonly AppDbContext _context;
         private readonly ILogger<TaskService> _logger;
         private readonly IFileUploadService _fileUploadService;
+        private readonly INotificationService _notificationService;
 
-        public TaskService(AppDbContext context, ILogger<TaskService> logger, IFileUploadService fileUploadService)
+        public TaskService(AppDbContext context, ILogger<TaskService> logger, IFileUploadService fileUploadService, INotificationService notificationService)
         {
             _context = context;
             _logger = logger;
             _fileUploadService = fileUploadService;
+            _notificationService = notificationService;
         }
 
         public async Task<List<TaskResponse>> GetAllTasksAsync()
@@ -273,10 +275,10 @@ namespace TeamDesk.Services
                 // Send notification if task is assigned
                 if (request.AssignedToId.HasValue)
                 {
-                    //await _notificationService.SendTaskAssignmentNotificationAsync(
-                    //    task.Id,
-                    //    request.AssignedToId.Value,
-                    //    null);
+                    await _notificationService.SendTaskAssignmentNotificationAsync(
+                        task.Id,
+                        request.AssignedToId.Value,
+                        null);
                 }
 
                 // Reload task with related data
@@ -323,10 +325,10 @@ namespace TeamDesk.Services
                     task.AssignedToId = request.AssignedToId;
 
                     // Send notification to new assignee
-                    //await _notificationService.SendTaskAssignmentNotificationAsync(
-                    //    task.Id,
-                    //    request.AssignedToId.Value,
-                    //    null);
+                    await _notificationService.SendTaskAssignmentNotificationAsync(
+                        task.Id,
+                        request.AssignedToId.Value,
+                        null);
                 }
 
                 if (request.Status.HasValue)
@@ -421,10 +423,10 @@ namespace TeamDesk.Services
 
                 if (sendNotification)
                 {
-                    //await _notificationService.SendTaskAssignmentNotificationAsync(
-                    //    taskId,
-                    //    assignedToId,
-                    //    null);
+                    await _notificationService.SendTaskAssignmentNotificationAsync(
+                        taskId,
+                        assignedToId,
+                        null);
                 }
 
                 var updatedTask = await GetTaskByIdAsync(taskId);

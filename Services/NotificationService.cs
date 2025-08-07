@@ -33,7 +33,7 @@ namespace TeamDesk.Services
                 var notifications = await _context.Notifications
                     .Where(n => n.UserId == userId)
                     .OrderByDescending(n => n.CreatedAt)
-                    .Take(50) // Limit to recent 50 notifications
+                    .Take(50)
                     .ToListAsync();
 
                 return notifications.Select(MapToNotificationResponse).ToList();
@@ -66,7 +66,6 @@ namespace TeamDesk.Services
 
                 var response = MapToNotificationResponse(notification);
 
-                // ✅ Send real-time notification via SignalR
                 await _hubContext.Clients.Group($"user_{request.UserId}")
                     .SendAsync("ReceiveNotification", response);
 
@@ -85,21 +84,18 @@ namespace TeamDesk.Services
         {
             try
             {
-                // Get task details
                 var task = await _context.Tasks
                     .Include(t => t.Project)
                     .FirstOrDefaultAsync(t => t.Id == taskId);
 
                 if (task == null) return false;
 
-                // Get assigned staff details
                 var staff = await _context.Staff
                     .Include(s => s.User)
                     .FirstOrDefaultAsync(s => s.Id == assignedToId);
 
                 if (staff == null) return false;
 
-                // Create notification
                 var notification = new Notification
                 {
                     UserId = staff.User.Id,
@@ -116,12 +112,8 @@ namespace TeamDesk.Services
                 await _context.SaveChangesAsync();
 
                 var response = MapToNotificationResponse(notification);
-
-                // ✅ Send real-time notification with special sound indicator
                 await _hubContext.Clients.Group($"user_{staff.User.Id}")
-                    .SendAsync("ReceiveNotification", response, "task_assigned"); // ✅ Pass notification type for sound
-
-    
+                    .SendAsync("ReceiveNotification", response, "task_assigned");
 
                 _logger.LogInformation("Sent task assignment notification for task {TaskId} to user {UserId}",
                     taskId, staff.User.Id);
@@ -144,8 +136,6 @@ namespace TeamDesk.Services
 
                 notification.IsRead = true;
                 await _context.SaveChangesAsync();
-
-                // ✅ Broadcast notification read status to user
                 await _hubContext.Clients.Group($"user_{notification.UserId}")
                     .SendAsync("NotificationMarkedAsRead", notificationId);
 
@@ -172,8 +162,6 @@ namespace TeamDesk.Services
                 }
 
                 await _context.SaveChangesAsync();
-
-                // ✅ Broadcast all notifications marked as read
                 await _hubContext.Clients.Group($"user_{userId}")
                     .SendAsync("AllNotificationsMarkedAsRead");
 
@@ -195,8 +183,6 @@ namespace TeamDesk.Services
 
                 _context.Notifications.Remove(notification);
                 await _context.SaveChangesAsync();
-
-                // ✅ Broadcast notification deletion to user
                 await _hubContext.Clients.Group($"user_{notification.UserId}")
                     .SendAsync("NotificationDeleted", notificationId);
 
