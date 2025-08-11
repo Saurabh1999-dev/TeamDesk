@@ -17,5 +17,6 @@ namespace TeamDesk.DTOs.Request
         public decimal Salary { get; set; }
 
         public List<string>? Skills { get; set; }
+        public int Role { get; set; }
     }
 }

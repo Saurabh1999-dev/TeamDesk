@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Text.Json;
 using TeamDesk.Data;
 using TeamDesk.DTOs;
@@ -137,11 +138,25 @@ namespace TeamDesk.Services
                 var staff = await _context.Staff
                     .Include(s => s.User)
                     .FirstOrDefaultAsync(s => s.Id == id && s.IsActive);
+                if (staff != null)
+                {
+                    var existingUser = await _context.User
+                        .FirstOrDefaultAsync(u => u.Id == staff.UserId);
+                    if (existingUser != null)
+                    {
+                        existingUser.Role = request.Role;
+
+                        await _context.SaveChangesAsync();
+                    }
+
+                }
 
                 if (staff == null)
                 {
                     throw new InvalidOperationException($"Staff member with ID {id} not found");
                 }
+
+
 
                 // Update staff properties
                 staff.Department = request.Department;
@@ -149,7 +164,7 @@ namespace TeamDesk.Services
                 staff.Salary = request.Salary;
                 staff.Skills = JsonSerializer.Serialize(request.Skills ?? new List<string>());
                 staff.UpdatedAt = DateTime.UtcNow;
-
+                staff.User.Role= request.Role;
                 // Update user properties if provided
                 if (!string.IsNullOrEmpty(request.FirstName))
                     staff.User.FirstName = request.FirstName;
