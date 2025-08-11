@@ -131,6 +131,52 @@ namespace TeamDesk.Controllers
             }
         }
 
+        [HttpPut("edit/{id}")]
+        public async Task<ActionResult<LeaveResponse>> EditLeave(Guid id, [FromBody] UpdateLeaveRequest request)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                var userId = Guid.Parse(GetCurrentUserId());
+                var updatedLeave = await _leaveService.UpdateLeaveAsync(request, userId);
+
+                return Ok(updatedLeave);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating leave application with ID {LeaveId}", id);
+                return StatusCode(500, "An error occurred while updating the leave application");
+            }
+        }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeletelLeave(Guid id)
+        {
+            try
+            {
+                var userId = Guid.Parse(GetCurrentUserId());
+                await _leaveService.CancelLeaveAsync(userId);
+
+                return NoContent();
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error cancelling leave application with ID {LeaveId}", id);
+                return StatusCode(500, "An error occurred while cancelling the leave application");
+            }
+        }
+
+
         // Approve/Reject leave (Admin only)
         [HttpPost("approve")]
         public async Task<ActionResult<LeaveResponse>> ApproveLeave([FromBody] ApproveLeaveRequest request)

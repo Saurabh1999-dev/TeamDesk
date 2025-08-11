@@ -12,9 +12,8 @@ namespace TeamDesk.Services.Interfaces
         Task<List<LeaveResponse>> GetLeavesByUserAsync(Guid userId); // ✅ Renamed from GetLeavesByStaffAsync
         Task<List<LeaveResponse>> GetPendingLeavesAsync();
         Task<LeaveResponse> CreateLeaveAsync(CreateLeaveRequest request, Guid userId);
-        Task<LeaveResponse> UpdateLeaveAsync(Guid id, UpdateLeaveRequest request, Guid userId);
-        Task<bool> DeleteLeaveAsync(Guid id, Guid userId);
-        Task<bool> CancelLeaveAsync(Guid id, Guid userId);
+        Task<LeaveResponse> UpdateLeaveAsync( UpdateLeaveRequest request, Guid userId);
+        Task<bool> CancelLeaveAsync( Guid userId);
 
         // Admin Operations
         Task<LeaveResponse> ApproveLeaveAsync(ApproveLeaveRequest request, Guid adminId);

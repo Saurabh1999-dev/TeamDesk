@@ -21,10 +21,11 @@ namespace TeamDesk.DTOs.Request
 
     public class UpdateLeaveRequest
     {
-        public LeaveType? LeaveType { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public string? Reason { get; set; }
+        public LeaveType LeaveType { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Reason { get; set; }
+        public int TotalDays { get; set; }
     }
 
     public class ApproveLeaveRequest

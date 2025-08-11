@@ -184,202 +184,52 @@ namespace TeamDesk.Services
         }
 
         // ✅ ADD MISSING UpdateLeaveAsync method
-        public async Task<LeaveResponse> UpdateLeaveAsync(Guid id, UpdateLeaveRequest request, Guid userId)
+        public async Task<LeaveResponse> UpdateLeaveAsync(UpdateLeaveRequest request, Guid userId)
         {
-            try
+            var leave = await _context.Leaves
+                .FirstOrDefaultAsync(l => l.UserId == userId);
+
+            if (leave == null)
+                throw new InvalidOperationException("Leave application not found or access denied.");
+
+            // Optional: Add business logic validation (e.g., cannot update past leaves)
+            var totalDays = (int)(request.EndDate.Date - request.StartDate.Date).TotalDays + 1;
+            // Update fields
+            leave.StartDate = request.StartDate;
+            leave.EndDate = request.EndDate;
+            leave.Reason = request.Reason;
+            leave.LeaveType = request.LeaveType;
+            leave.Status = LeaveStatus.Pending;
+            leave.TotalDays = totalDays;
+            leave.UpdatedAt = DateTime.UtcNow;
+
+            _context.Leaves.Update(leave);
+            await _context.SaveChangesAsync();
+
+            return new LeaveResponse
             {
-                var leave = await _context.Leaves
-                    .Include(l => l.User)
-                    .FirstOrDefaultAsync(l => l.Id == id && l.UserId == userId && l.IsActive);
-
-                if (leave == null)
-                    throw new InvalidOperationException($"Leave with ID {id} not found or you don't have permission to modify it");
-
-                // Can only update pending leaves
-                if (leave.Status != LeaveStatus.Pending)
-                    throw new InvalidOperationException($"Cannot update leave with status {leave.Status}. Only pending leaves can be modified.");
-
-                // Update fields if provided
-                var hasChanges = false;
-
-                if (request.LeaveType.HasValue && request.LeaveType != leave.LeaveType)
-                {
-                    leave.LeaveType = request.LeaveType.Value;
-                    hasChanges = true;
-                }
-
-                if (request.StartDate.HasValue && request.StartDate.Value.Date != leave.StartDate.Date)
-                {
-                    if (request.StartDate.Value.Date < DateTime.UtcNow.Date)
-                        throw new InvalidOperationException("Leave start date cannot be in the past");
-
-                    leave.StartDate = request.StartDate.Value.Date;
-                    hasChanges = true;
-                }
-
-                if (request.EndDate.HasValue && request.EndDate.Value.Date != leave.EndDate.Date)
-                {
-                    if (request.EndDate.Value.Date < leave.StartDate.Date)
-                        throw new InvalidOperationException("Leave end date must be after start date");
-
-                    leave.EndDate = request.EndDate.Value.Date;
-                    hasChanges = true;
-                }
-
-                if (!string.IsNullOrWhiteSpace(request.Reason) && request.Reason != leave.Reason)
-                {
-                    leave.Reason = request.Reason;
-                    hasChanges = true;
-                }
-
-                if (hasChanges)
-                {
-                    // Recalculate total days
-                    leave.TotalDays = (int)(leave.EndDate.Date - leave.StartDate.Date).TotalDays + 1;
-
-                    // Check for overlapping leaves (excluding current leave)
-                    var overlappingLeave = await _context.Leaves
-                        .Where(l => l.Id != id &&
-                                    l.UserId == userId &&
-                                    l.IsActive &&
-                                    l.Status != LeaveStatus.Rejected &&
-                                    l.Status != LeaveStatus.Cancelled &&
-                                    ((leave.StartDate >= l.StartDate && leave.StartDate <= l.EndDate) ||
-                                     (leave.EndDate >= l.StartDate && leave.EndDate <= l.EndDate) ||
-                                     (leave.StartDate <= l.StartDate && leave.EndDate >= l.EndDate)))
-                        .FirstOrDefaultAsync();
-
-                    if (overlappingLeave != null)
-                        throw new InvalidOperationException("Updated leave dates overlap with existing leave application");
-
-                    // Check leave balance for annual leaves
-                    if (leave.LeaveType == LeaveType.Annual)
-                    {
-                        var remainingDays = await GetRemainingLeaveDaysAsync(userId, leave.LeaveType);
-                        if (leave.TotalDays > remainingDays)
-                            throw new InvalidOperationException($"Insufficient leave balance. Remaining: {remainingDays} days");
-                    }
-
-                    leave.UpdatedAt = DateTime.UtcNow;
-                    await _context.SaveChangesAsync();
-
-                    _logger.LogInformation("Updated leave {LeaveId} for user {UserId}", id, userId);
-                }
-
-                return await GetLeaveByIdAsync(id) ?? throw new InvalidOperationException("Failed to retrieve updated leave");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error updating leave {LeaveId} for user {UserId}", id, userId);
-                throw;
-            }
+                Id = leave.UserId,
+                StartDate = leave.StartDate,
+                EndDate = leave.EndDate,
+                Reason = leave.Reason,
+                LeaveType = leave.LeaveType,
+                Status = leave.Status
+            };
         }
 
-        // ✅ ADD MISSING DeleteLeaveAsync method
-        public async Task<bool> DeleteLeaveAsync(Guid id, Guid userId)
+        public async Task<bool> CancelLeaveAsync(Guid userId)
         {
-            try
-            {
-                var leave = await _context.Leaves
-                    .FirstOrDefaultAsync(l => l.Id == id && l.UserId == userId && l.IsActive);
+            var leave = await _context.Leaves
+                .FirstOrDefaultAsync(l =>l.UserId == userId);
 
-                if (leave == null)
-                {
-                    _logger.LogWarning("Leave {LeaveId} not found for user {UserId}", id, userId);
-                    return false;
-                }
+            if (leave == null)
+                throw new InvalidOperationException("Leave application not found or access denied.");
 
-                // Can only delete pending leaves
-                if (leave.Status != LeaveStatus.Pending)
-                {
-                    throw new InvalidOperationException($"Cannot delete leave with status {leave.Status}. Only pending leaves can be deleted.");
-                }
 
-                // Soft delete
-                leave.IsActive = false;
-                leave.UpdatedAt = DateTime.UtcNow;
+            _context.Leaves.Remove(leave);
+            await _context.SaveChangesAsync();
 
-                // Also soft delete associated attachments
-                var attachments = await _context.LeaveAttachments
-                    .Where(a => a.LeaveId == id && a.IsActive)
-                    .ToListAsync();
-
-                foreach (var attachment in attachments)
-                {
-                    attachment.IsActive = false;
-
-                    // Delete physical file
-                    try
-                    {
-                        await _fileUploadService.DeleteFileAsync(attachment.FilePath);
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.LogWarning(ex, "Failed to delete physical file {FilePath} for attachment {AttachmentId}",
-                            attachment.FilePath, attachment.Id);
-                    }
-                }
-
-                await _context.SaveChangesAsync();
-                _logger.LogInformation("Deleted leave {LeaveId} for user {UserId}", id, userId);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error deleting leave {LeaveId} for user {UserId}", id, userId);
-                throw;
-            }
-        }
-
-        // ✅ ADD MISSING CancelLeaveAsync method
-        public async Task<bool> CancelLeaveAsync(Guid id, Guid userId)
-        {
-            try
-            {
-                var leave = await _context.Leaves
-                    .Include(l => l.User)
-                    .FirstOrDefaultAsync(l => l.Id == id && l.UserId == userId && l.IsActive);
-
-                if (leave == null)
-                {
-                    _logger.LogWarning("Leave {LeaveId} not found for user {UserId}", id, userId);
-                    return false;
-                }
-
-                // Can only cancel pending or approved leaves
-                if (leave.Status != LeaveStatus.Pending && leave.Status != LeaveStatus.Approved)
-                {
-                    throw new InvalidOperationException($"Cannot cancel leave with status {leave.Status}");
-                }
-
-                // If approved and leave has already started, might need additional validation
-                if (leave.Status == LeaveStatus.Approved && leave.StartDate.Date <= DateTime.UtcNow.Date)
-                {
-                    throw new InvalidOperationException("Cannot cancel leave that has already started. Please contact HR.");
-                }
-
-                leave.Status = LeaveStatus.Cancelled;
-                leave.UpdatedAt = DateTime.UtcNow;
-
-                await _context.SaveChangesAsync();
-
-                // Notify admin/HR about cancellation
-                await _notificationService.SendLeaveStatusUpdateNotificationAsync(
-                    leave.Id,
-                    userId,
-                    LeaveStatus.Cancelled,
-                    "Leave cancelled by user"
-                );
-
-                _logger.LogInformation("Cancelled leave {LeaveId} for user {UserId}", id, userId);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error cancelling leave {LeaveId} for user {UserId}", id, userId);
-                throw;
-            }
+            return true;
         }
 
         public async Task<LeaveResponse> ApproveLeaveAsync(ApproveLeaveRequest request, Guid adminId)
