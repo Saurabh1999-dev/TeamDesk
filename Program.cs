@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TeamDesk.Data;
+using TeamDesk.DTOs;
 using TeamDesk.Hubs;
+using TeamDesk.Models.Entities;
 using TeamDesk.Services;
 using TeamDesk.Services.Interfaces;
 
@@ -37,7 +40,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 {
                     context.Token = accessToken;
                 }
-                return Task.CompletedTask;
+                return System.Threading.Tasks.Task.CompletedTask;
             }
         };
     });
@@ -113,6 +116,23 @@ builder.Services.AddSignalR(options =>
     options.HandshakeTimeout = TimeSpan.FromSeconds(15);
 });
 
+//builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
+//{
+//    options.Password.RequireDigit = true;
+//    options.Password.RequiredLength = 8;
+//    options.Password.RequireNonAlphanumeric = false;
+//    options.Password.RequireUppercase = true;
+//    options.Password.RequireLowercase = true;
+//    options.User.RequireUniqueEmail = true;
+//    options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+//    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+//    options.Lockout.MaxFailedAccessAttempts = 5;
+//})
+//.AddEntityFrameworkStores<AppDbContext>()
+//.AddDefaultTokenProviders();
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
@@ -121,6 +141,7 @@ builder.Services.AddScoped<IStaffService, StaffService>();
 builder.Services.AddScoped<IClientService, clientService>();
 builder.Services.AddScoped<ICaptchaService, CaptchaService>();
 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
+builder.Services.AddScoped<ILeaveService, LeaveService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IFaqService, FaqService>();
 builder.Services.AddDistributedMemoryCache();

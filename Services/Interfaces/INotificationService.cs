@@ -1,5 +1,6 @@
 ﻿using TeamDesk.DTOs;
 using TeamDesk.DTOs.Request;
+using TeamDesk.Enum;
 
 namespace TeamDesk.Services.Interfaces
 {
@@ -12,5 +13,7 @@ namespace TeamDesk.Services.Interfaces
         Task<int> MarkAllNotificationsAsReadAsync(Guid userId);
         Task<bool> DeleteNotificationAsync(Guid notificationId);
         Task<int> GetUnreadNotificationCountAsync(Guid userId);
+        Task<bool> SendLeaveApplicationNotificationAsync(Guid leaveId);
+        Task<bool> SendLeaveStatusUpdateNotificationAsync(Guid leaveId, Guid staffId, LeaveStatus status, string? comments);
     }
 }

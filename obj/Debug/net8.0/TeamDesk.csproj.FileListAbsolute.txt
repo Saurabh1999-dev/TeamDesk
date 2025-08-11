@@ -168,6 +168,7 @@ D:\Saurabh\TeamDesk\obj\Debug\net8.0\TeamDesk.genruntimeconfig.cache
 D:\Saurabh\TeamDesk\obj\Debug\net8.0\ref\TeamDesk.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\appsettings.Development.json
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\appsettings.json
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\TeamDesk.staticwebassets.runtime.json
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\TeamDesk.exe
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\TeamDesk.deps.json
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\TeamDesk.runtimeconfig.json
@@ -178,6 +179,10 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Azure.Identity.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Humanizer.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -199,7 +204,10 @@ D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyI
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Saurabh\TeamDesk\TeamDeskBE\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

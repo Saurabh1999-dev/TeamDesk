@@ -130,6 +130,162 @@ namespace TeamDesk.Migrations
                     b.ToTable("Clients");
                 });
 
+            modelBuilder.Entity("TeamDesk.Models.Entities.Leave", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ApprovalComments")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ApprovedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<int>("LeaveType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalDays")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApprovedById")
+                        .HasDatabaseName("IX_Leaves_ApprovedById");
+
+                    b.HasIndex("EndDate")
+                        .HasDatabaseName("IX_Leaves_EndDate");
+
+                    b.HasIndex("IsActive")
+                        .HasDatabaseName("IX_Leaves_IsActive");
+
+                    b.HasIndex("LeaveType")
+                        .HasDatabaseName("IX_Leaves_LeaveType");
+
+                    b.HasIndex("StartDate")
+                        .HasDatabaseName("IX_Leaves_StartDate");
+
+                    b.HasIndex("Status")
+                        .HasDatabaseName("IX_Leaves_Status");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IX_Leaves_UserId");
+
+                    b.HasIndex("Status", "CreatedAt")
+                        .HasDatabaseName("IX_Leaves_Status_CreatedAt");
+
+                    b.HasIndex("LeaveType", "StartDate", "Status")
+                        .HasDatabaseName("IX_Leaves_LeaveType_StartDate_Status");
+
+                    b.HasIndex("UserId", "Status", "IsActive")
+                        .HasDatabaseName("IX_Leaves_UserId_Status_IsActive");
+
+                    b.ToTable("Leaves");
+                });
+
+            modelBuilder.Entity("TeamDesk.Models.Entities.LeaveAttachment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("FileType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FileUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<Guid>("LeaveId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OriginalFileName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<Guid>("UploadedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsActive")
+                        .HasDatabaseName("IX_LeaveAttachments_IsActive");
+
+                    b.HasIndex("LeaveId")
+                        .HasDatabaseName("IX_LeaveAttachments_LeaveId");
+
+                    b.HasIndex("UploadedById")
+                        .HasDatabaseName("IX_LeaveAttachments_UploadedById");
+
+                    b.HasIndex("LeaveId", "IsActive")
+                        .HasDatabaseName("IX_LeaveAttachments_LeaveId_IsActive");
+
+                    b.ToTable("LeaveAttachments");
+                });
+
             modelBuilder.Entity("TeamDesk.Models.Entities.Notification", b =>
                 {
                     b.Property<Guid>("Id")
@@ -466,6 +622,12 @@ namespace TeamDesk.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PasswordResetToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("PasswordResetTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
@@ -489,6 +651,43 @@ namespace TeamDesk.Migrations
                         .IsRequired();
 
                     b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("TeamDesk.Models.Entities.Leave", b =>
+                {
+                    b.HasOne("TeamDesk.Models.Entities.User", "ApprovedBy")
+                        .WithMany()
+                        .HasForeignKey("ApprovedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("TeamDesk.Models.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ApprovedBy");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TeamDesk.Models.Entities.LeaveAttachment", b =>
+                {
+                    b.HasOne("TeamDesk.Models.Entities.Leave", "Leave")
+                        .WithMany("Attachments")
+                        .HasForeignKey("LeaveId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TeamDesk.Models.Entities.User", "UploadedBy")
+                        .WithMany()
+                        .HasForeignKey("UploadedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Leave");
+
+                    b.Navigation("UploadedBy");
                 });
 
             modelBuilder.Entity("TeamDesk.Models.Entities.Notification", b =>
@@ -602,6 +801,11 @@ namespace TeamDesk.Migrations
             modelBuilder.Entity("TeamDesk.Models.Entities.Client", b =>
                 {
                     b.Navigation("Projects");
+                });
+
+            modelBuilder.Entity("TeamDesk.Models.Entities.Leave", b =>
+                {
+                    b.Navigation("Attachments");
                 });
 
             modelBuilder.Entity("TeamDesk.Models.Entities.Task", b =>
